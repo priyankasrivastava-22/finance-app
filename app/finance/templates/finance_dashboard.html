@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Dashboard</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+
+    <h1>Personal Finance Tracker</h1>
+
+    <div class="cards">
+        <div class="card income">
+            <h3>Total Income</h3>
+            <p>₹ {{ income }}</p>
+        </div>
+
+        <div class="card expense">
+            <h3>Total Expense</h3>
+            <p>₹ {{ expense }}</p>
+        </div>
+
+        <div class="card balance">
+            <h3>Current Balance</h3>
+            <p>₹ {{ balance }}</p>
+        </div>
+    </div>
+
+    <a href="/add-transaction" class="btn">Add New Transaction</a>
+
+    <h2>Recent Transactions</h2>
+
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for t in transactions %}
+        <tr>
+            <td>{{ t.type }}</td>
+            <td>{{ t.category }}</td>
+            <td>₹ {{ t.amount }}</td>
+            <td>
+                <a href="/edit/{{ t.id }}">Edit</a> |
+                <a href="/delete/{{ t.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>

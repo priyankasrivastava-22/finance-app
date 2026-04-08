@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Transaction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1>Add Transaction</h1>
+
+    <form method="POST">
+
+        <label>Type</label>
+        <select name="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <label>Category</label>
+        <input type="text" name="category" placeholder="Enter category">
+
+        <label>Amount</label>
+        <input type="number" name="amount" placeholder="Enter amount">
+
+        <button type="submit">Add Transaction</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
