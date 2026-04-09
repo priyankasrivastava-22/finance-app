@@ -5,19 +5,14 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
 <div class="form-container">
-
     <h1>Edit Transaction</h1>
-
     <form method="POST">
-
         <label>Type</label>
         <select name="type">
             <option value="income" {% if transaction.type == 'income' %}selected{% endif %}>Income</option>
             <option value="expense" {% if transaction.type == 'expense' %}selected{% endif %}>Expense</option>
         </select>
-
         <label>Category</label>
         <input type="text" name="category" value="{{ transaction.category }}">
 
@@ -27,8 +22,6 @@
         <button type="submit">Update Transaction</button>
 
     </form>
-
 </div>
-
 </body>
 </html>
