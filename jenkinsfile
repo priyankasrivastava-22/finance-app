@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/priyankasrivastava-22/finance-app.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'python -m unittest discover'
+            }
+        }
+
+        stage('Build Complete') {
+            steps {
+                echo 'Build Successful'
+            }
+        }
+    }
+}
